@@ -4,10 +4,9 @@
 	<script>
 		function confirmToDelete(hashslug)
 		{
-			swal({
+			window.Swal.fire({
 			  title: 'Are you sure?',
 			  text: "You won't be able to revert this!",
-			  type: 'warning',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
 			  cancelButtonColor: '#d33',
@@ -55,21 +54,21 @@
 									<td class="text-center">{{ money()->toHuman($payslip->gross_salary) }}</td>
 									<td class="text-center">{{ money()->toHuman($payslip->net_salary) }}</td>
 									<td class="text-center">
-										<span class="p-2 badge badge-{{ getYesNoClassName($payslip->is_verified) }}">{{ $payslip->is_verified ? 'Yes' : 'No' }}</span>
+										<span class="p-2 badge badge-{{ $payslip->is_verified ? 'success' : 'danger' }}">{{ $payslip->is_verified ? 'Yes' : 'No' }}</span>
 									</td>
 									<td class="text-center">
-										<span class="p-2 badge badge-{{ getYesNoClassName($payslip->is_approved) }}">{{ $payslip->is_approved ? 'Yes' : 'No' }}</span>
+										<span class="p-2 badge badge-{{ $payslip->is_approved ? 'success' : 'danger' }}">{{ $payslip->is_approved ? 'Yes' : 'No' }}</span>
 									</td>
 									<td class="text-center">
-										<span class="p-2 badge badge-{{ getYesNoClassName($payslip->is_locked) }}">{{ $payslip->is_locked ? 'Yes' : 'No' }}</span>
+										<span class="p-2 badge badge-{{ $payslip->is_locked ? 'success' : 'danger' }}">{{ $payslip->is_locked ? 'Yes' : 'No' }}</span>
 									</td>
 									<td class="text-center">
 										<div class="btn-group">
 											<a href="{{ route('open-payroll.payslip.show', $payslip->hashslug) }}" class="btn border-primary text-primary">Details</a>
 											@if(!$payslip->is_locked)
 												<div class="btn border-danger text-danger" onclick="confirmToDelete('{{ $payslip->hashslug }}')">Delete</div>
-												<form id="delete-form-{{ $payslip->hashslug }}" 
-													action="{{ route('open-payroll.payslip.destroy', $payslip->hashslug) }}" 
+												<form id="delete-form-{{ $payslip->hashslug }}"
+													action="{{ route('open-payroll.payslip.destroy', $payslip->hashslug) }}"
 													method="POST" style="display: none;">
 			                                        @csrf
 			                                        @method('DELETE')

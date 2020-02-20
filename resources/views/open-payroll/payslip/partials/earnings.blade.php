@@ -2,10 +2,9 @@
 	<script>
 		function confirmToDeleteEarning(hashslug)
 		{
-			swal({
+			window.Swal.fire({
 			  title: 'Are you sure?',
 			  text: "You won't be able to revert this!",
-			  type: 'warning',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
 			  cancelButtonColor: '#d33',
@@ -32,8 +31,8 @@
 					<td>{{ money()->toHuman($earning->amount ?? 0) }}</td>
 					<td class="text-center">
 						<div class="btn btn-sm border-danger text-danger" onclick="confirmToDeleteEarning('{{ $earning->hashslug }}')">Delete</div>
-						<form id="delete-earning-form-{{ $earning->hashslug }}" 
-							action="{{ route('open-payroll.earning.destroy', $earning->hashslug) }}" 
+						<form id="delete-earning-form-{{ $earning->hashslug }}"
+							action="{{ route('open-payroll.earning.destroy', $earning->hashslug) }}"
 							method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')

@@ -14,3 +14,4 @@ yarn-error.log
 .styleci.yml
 public_html/css
 public_html/js
+mix-manifest.json
