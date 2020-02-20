@@ -15,6 +15,7 @@ class DeductionController extends Controller
      */
     public function index()
     {
+        return view('open-payroll.settings.deduction.index');
     }
 
     /**

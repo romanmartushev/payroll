@@ -1,4 +1,4 @@
-@extends('layouts.open-payroll')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -22,10 +22,10 @@
 
                         <div class="form-group">
                             <label for="description">{{ __('Description:') }}</label>
-                            
-                            <input id="description" type="text" 
-                                class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" 
-                                name="description" value="{{ old('description') }}" 
+
+                            <input id="description" type="text"
+                                class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
+                                name="description" value="{{ old('description') }}"
                                 autofocus>
                             <small class="text-muted pull-right">{{ __('(Optional)') }}</small>
 
@@ -38,10 +38,10 @@
 
                         <div class="form-group">
                             <label for="amount">{{ __('Amount:') }}</label>
-                            
-                            <input id="amount" type="number" 
-                                class="form-control{{ $errors->has('amount') ? ' is-invalid' : '' }}" 
-                                name="amount" value="{{ old('amount') }}" 
+
+                            <input id="amount" type="number"
+                                class="form-control{{ $errors->has('amount') ? ' is-invalid' : '' }}"
+                                name="amount" value="{{ old('amount') }}"
                                 required autofocus>
 
                             @if ($errors->has('amount'))
@@ -50,7 +50,7 @@
                                 </span>
                             @endif
                         </div>
-                       
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

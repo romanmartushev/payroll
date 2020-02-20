@@ -14,6 +14,9 @@ class EarningController extends Controller
      */
     public function index()
     {
+        $types = \App\Models\OpenPayroll\EarningType::all();
+
+        return view('open-payroll.earnings.index', compact('types'));
     }
 
     /**

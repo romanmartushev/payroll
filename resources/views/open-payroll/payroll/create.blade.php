@@ -1,4 +1,4 @@
-@extends('layouts.open-payroll')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -15,10 +15,10 @@
                             <label for="month" class="col-md-4 col-form-label text-md-right">{{ __('Month') }}</label>
 
                             <div class="col-md-6">
-                                <input id="month" type="number" 
-                                	min="1" max="12" 
-                                	class="form-control{{ $errors->has('month') ? ' is-invalid' : '' }}" 
-                                	name="month" value="{{ old('month', date('n')) }}" 
+                                <input id="month" type="number"
+                                	min="1" max="12"
+                                	class="form-control{{ $errors->has('month') ? ' is-invalid' : '' }}"
+                                	name="month" value="{{ old('month', date('n')) }}"
                                 	required autofocus>
 
                                 @if ($errors->has('month'))
@@ -33,10 +33,10 @@
                             <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('Year') }}</label>
 
                             <div class="col-md-6">
-                                <input id="year" type="number" 
-                                	min="{{ date('Y') }}" 
-                                	class="form-control{{ $errors->has('year') ? ' is-invalid' : '' }}" 
-                                	name="year" value="{{ old('year', date('Y')) }}" 
+                                <input id="year" type="number"
+                                	min="{{ date('Y') }}"
+                                	class="form-control{{ $errors->has('year') ? ' is-invalid' : '' }}"
+                                	name="year" value="{{ old('year', date('Y')) }}"
                                 	required autofocus>
 
                                 @if ($errors->has('year'))
@@ -51,11 +51,11 @@
                             <label for="date" class="col-md-4 col-form-label text-md-right">{{ __('Pay Date') }}</label>
 
                             <div class="col-md-6">
-                                <input id="date" type="date" 
-                                	class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" 
-                                	name="date" value="{{ old('date', date('d/m/Y')) }}" 
+                                <input id="date" type="date"
+                                	class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}"
+                                	name="date" value="{{ old('date', date('d/m/Y')) }}"
                                 	required autofocus>
-								
+
                                 @if ($errors->has('date'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('date') }}</strong>

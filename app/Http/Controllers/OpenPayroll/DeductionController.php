@@ -14,6 +14,9 @@ class DeductionController extends Controller
      */
     public function index()
     {
+        $types = \App\Models\OpenPayroll\DeductionType::all();
+
+        return view('open-payroll.deductions.index', compact('types'));
     }
 
     /**

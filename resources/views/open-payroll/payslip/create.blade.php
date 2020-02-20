@@ -1,4 +1,4 @@
-@extends('layouts.open-payroll')
+@extends('layouts.app')
 
 @push('scripts')
     <script>
@@ -34,7 +34,7 @@
                                 </select>
                             </div>
                         @endif
-                        
+
                         Select employee(s):
                         <div class="table-responsive">
                             <table class="table table-condensed table-hover">
