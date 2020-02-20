@@ -1,4 +1,4 @@
-@extends('layouts.open-payroll')
+@extends('layouts.app')
 
 @section('content')
 	<div class="container">
@@ -13,7 +13,7 @@
 					</div>
 					<div class="card-body  border-0">
 						<div class="float-right">
-							{{ $payrolls->links() }}
+                        {{-- @todo: fix this							{{ $payrolls->links() }}--}}
 						</div>
 						<table class="table table-hover table-condensed">
 							<tr>

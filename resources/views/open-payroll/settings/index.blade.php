@@ -1,4 +1,4 @@
-@extends('layouts.open-payroll')
+@extends('layouts.app')
 
 @section('content')
 	<div class="container">
@@ -41,7 +41,7 @@
 								<pre>{{ $type->code }}</pre>
 							</td>
 							<td class="text-center">
-								@if(!$type->is_locked) 
+								@if(!$type->is_locked)
 									<a href="{{ route('open-payroll.setting.earning.edit', $type->id) }}" class="btn btn-default border-primary">Edit</a>
 								@endif
 							</td>
@@ -67,7 +67,7 @@
 								<pre>{{ $type->code }}</pre>
 							</td>
 							<td class="text-center">
-								@if(!$type->is_locked) 
+								@if(!$type->is_locked)
 									<a href="{{ route('open-payroll.setting.deduction.edit', $type->id) }}" class="btn btn-default border-primary">Edit</a>
 								@endif
 							</td>

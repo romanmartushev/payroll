@@ -1,4 +1,4 @@
-@extends('layouts.open-payroll')
+@extends('layouts.app')
 
 @push('scripts')
 	<script>

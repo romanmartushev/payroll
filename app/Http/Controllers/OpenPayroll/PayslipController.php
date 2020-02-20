@@ -19,6 +19,9 @@ class PayslipController extends Controller
      */
     public function index()
     {
+        $payrolls  = \App\Models\OpenPayroll\Payroll::whereIsLocked(false)->latest()->get();
+
+        return view('open-payroll.payslip.index', compact('payrolls'));
     }
 
     /**

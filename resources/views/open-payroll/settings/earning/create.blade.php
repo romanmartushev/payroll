@@ -1,4 +1,4 @@
-@extends('layouts.open-payroll')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -14,11 +14,11 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" 
+                    <form method="POST"
                         @if(isset($type) && $type->id)
-                            action="{{ route('open-payroll.setting.earning.update', $type->id) }}" 
+                            action="{{ route('open-payroll.setting.earning.update', $type->id) }}"
                         @else
-                            action="{{ route('open-payroll.setting.earning.store') }}" 
+                            action="{{ route('open-payroll.setting.earning.store') }}"
                         @endif
                         aria-label="{{ __('Create New Earning Type') }}">
 
@@ -31,12 +31,12 @@
 
                         <div class="form-group">
                             <label for="name">{{ __('Name:') }}</label>
-                            
-                            <input id="name" type="text" 
-                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
-                                name="name" 
 
-                                value="{{ (isset($type) ? $type->name : old('name')) }}" 
+                            <input id="name" type="text"
+                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                name="name"
+
+                                value="{{ (isset($type) ? $type->name : old('name')) }}"
                                 required autofocus>
 
                             @if ($errors->has('name'))
